@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="{% url 'home' %}">Password Generator</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">Generator</span></a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'about' %}">About</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+    <div class="jumbotron">
+        <h2>Random Password Generator</h2>
+    </div>
+    <form action="{% url 'form1' %}">
+        <div class="form-group">
+            <label for="length_select">Password length</label>
+            <select class="form-select" name="length" id="length_select">
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12" selected="selected">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+            </select>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" name="uppercase" id="uppercheck">
+            <label class="form-check-label" for="uppercheck">Uppercase</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" name="numbers" id="numbercheck">
+            <label class="form-check-label" for="numbercheck">Numbers</label>
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" name="specialchar" id="specialcheck">
+            <label class="form-check-label" for="specialcheck">Special Characters</label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Generate Password</button>
+    </form>
+</div>
+</body>
+</html>
